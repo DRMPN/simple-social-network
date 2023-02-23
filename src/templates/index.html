@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+{% block main %}
+<h2>Users</h2>
+<table class="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Username</th>
+    </thead>
+    <tbody>
+        {% for user in users %}
+        <tr>
+            {% for _, v in user.items() %}
+            <td> {{ v }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead>
+        <th>From</th>
+        <th>Message</th>
+        <th>Time</th>
+    </thead>
+    <tbody>
+
+        {% for message in user_history %}
+        <tr>
+            {% for _, v in message.items() %}
+            <td> {{ v }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}
