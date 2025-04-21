@@ -17,6 +17,18 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Ensure responses aren't cached
 @app.after_request
 def after_request(response):
+    """
+Modify the response headers to prevent caching.
+
+    This method updates the response headers to ensure that clients do not cache the response. 
+    It sets the Cache-Control, Expires, and Pragma headers appropriately.
+
+    Args:
+        response: The response object to be modified.
+
+    Returns:
+        None
+    """
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
